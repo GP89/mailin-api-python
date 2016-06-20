@@ -24,7 +24,7 @@ class Mailin:
     #request timeout
     socket.setdefaulttimeout(self.timeout)
 
-    h = httplib2.Http(".cache", disable_ssl_certificate_validation=True)
+    h = httplib2.Http(disable_ssl_certificate_validation=True)
     content_type = "application/json"
     r,c = h.request(url,method,body=indata,headers={'api-key':self.api_key, 'content-type':content_type})
     charenc = chardet.detect(c)
